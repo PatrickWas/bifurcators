@@ -13,10 +13,13 @@ N = int(input(prompt="How many iterations > 500 would you like to run? (ints onl
 
 truths = [False] * 10
 truths[0] = True
+truths[1] = True
+truths[2] = True
+truths[3] = True
 
-bifs = []
+bifs = [3, 3.4495, 3.5441]
 
-for i in range(0, 4, 0.0001):
+for i in range(3.56, 3.57, 0.000001):
     X = []
     X.append(seed)
     for j in range(1, N+1):
@@ -25,7 +28,7 @@ for i in range(0, 4, 0.0001):
         if j > N-1:
             for k in range(0, len(truths) - 1):
                 if truths[k] and ! truths[k+1]:
-                    if (int) (frac*2000) != (int) (X[j-2**k]*2000):
+                    if (int) (frac*N/5) != (int) (X[j-2**k]*N/5):
                         truths[k+1] = True
                         bifs.append(i)
             #gd.plot(i, frac)
