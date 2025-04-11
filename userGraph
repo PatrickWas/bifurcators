@@ -1,0 +1,51 @@
+Web VPython 3.2
+
+def logistic(r, X):
+    return r*X*(1-X)
+
+seed = 0.5
+
+str = input(prompt="How many iterations > 500 would you like to run? (ints only duh)")
+if '.' in str:
+    while True:
+        input(prompt="HOW DARE YOU INPUT A FLOAT. REFRESH THE PAGE OR ELSE FACE THE INFINITE LOOP")
+N = int(str)
+if (N <= 500):
+    while True:
+        input(prompt="HOW DARE YOU INPUT AN NUMBER BELOW 501. REFRESH THE PAGE OR ELSE FACE THE INFINITE LOOP")
+
+starttemp = input(prompt="What would you like the first r value to be? \n(0-4) \n(ints only duh)")
+endtemp = input(prompt="What would you like the last r value to be? \n(0-4 and greater than the start value)\n(ints only duh)")
+
+start = float(starttemp)
+end = float(endtemp)
+
+g = graph(title="Rabbits", xtitle="r", ytitle="Final population fraction(s)")
+gd = gdots(graph=g, radius=1, color = color.red)
+
+truths = [False] * 10
+truths[0] = True
+
+sum = 1
+
+i = start
+while i < end:
+    X = []
+    X.append(seed)
+    for j in range(1, N+1):
+        frac = logistic(i, X[j-1])
+        X.append(frac)
+        if j > N-sum:
+            for k in range(0, len(truths) - 1):
+                if truths[k] and ! truths[k+1]:
+                    if (int) (frac*2000) != (int) (X[j-2**k]*2000):
+                        truths[k+1] = True
+                        sum*=2
+                        k = len(truths) 
+            gd.plot(i, frac)
+    if i >= 2.9 and i < 3.5:
+        i+=0.005
+    else if i >= 3.5:
+            i+=0.0015
+    else:
+        i += 0.01
