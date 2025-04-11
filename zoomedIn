@@ -3,13 +3,17 @@ Web VPython 3.2
 def logistic(r, X):
     return r*X*(1-X)
 
-seed = float(input(prompt="Put a starting x between 0 and 1:"))
+seed = 0.5
 
-N = int(input(prompt="How many iterations > 500 would you like to run? (ints only duh)"))
+str = input(prompt="How many iterations > 500 would you like to run? (ints only duh)")
+if '.' in str:
+    while True:
+        input(prompt="HOW DARE YOU INPUT A FLOAT. REFRESH THE PAGE OR ELSE FACE THE INFINITE LOOP")
+N = int(str)
+if (N <= 500):
+    while True:
+        input(prompt="HOW DARE YOU INPUT AN NUMBER BELOW 501. REFRESH THE PAGE OR ELSE FACE THE INFINITE LOOP")
 
-
-#g = graph(title="Rabbits", xtitle="r", ytitle="Final population fraction(s)")
-#gd = gdots()
 
 truths = [False] * 10
 truths[0] = True
@@ -28,11 +32,9 @@ for i in range(3.56, 3.57, 0.000001):
         if j > N-1:
             for k in range(0, len(truths) - 1):
                 if truths[k] and ! truths[k+1]:
-                    if (int) (frac*N/5) != (int) (X[j-2**k]*N/5):
+                    if (int) (frac*N) != (int) (X[j-2**k]*N):
                         truths[k+1] = True
                         bifs.append(i)
-            #gd.plot(i, frac)
-            #print(frac)
 print(bifs)
 for i in range(2, len(bifs)):
     denom = bifs[i] - bifs[i-1]
