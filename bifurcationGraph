@@ -27,8 +27,6 @@ truths[0] = True
 
 sum = 1
 
-#bifs = []
-
 i = 0
 while i < 4:
     X = []
