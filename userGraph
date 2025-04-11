@@ -19,7 +19,9 @@ endtemp = input(prompt="What would you like the last r value to be? \n(0-4 and g
 
 start = float(starttemp)
 end = float(endtemp)
-
+if (start < 0):
+    while True:
+        input(prompt="HOW DARE YOU INPUT A NEGATIVE NUMBER. REFRESH THE PAGE OR ELSE FACE THE INFINITE LOOP")
 if (end == start):
     while True:
         input(prompt="HOW DARE YOU INPUT THE SAME START AND END. REFRESH THE PAGE OR ELSE FACE THE INFINITE LOOP")
