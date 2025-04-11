@@ -14,11 +14,18 @@ if (N <= 500):
     while True:
         input(prompt="HOW DARE YOU INPUT AN NUMBER BELOW 501. REFRESH THE PAGE OR ELSE FACE THE INFINITE LOOP")
 
-starttemp = input(prompt="What would you like the first r value to be? \n(0-4) \n(ints only duh)")
-endtemp = input(prompt="What would you like the last r value to be? \n(0-4 and greater than the start value)\n(ints only duh)")
+starttemp = input(prompt="What would you like the first r value to be? \n(0-4)")
+endtemp = input(prompt="What would you like the last r value to be? \n(0-4 and greater than the start value)")
 
 start = float(starttemp)
 end = float(endtemp)
+
+if (end == start):
+    while True:
+        input(prompt="HOW DARE YOU INPUT THE SAME START AND END. REFRESH THE PAGE OR ELSE FACE THE INFINITE LOOP")
+if (end < start):
+    while True:
+        input(prompt="HOW DARE YOU INPUT AN END LESS THAN START. REFRESH THE PAGE OR ELSE FACE THE INFINITE LOOP")
 
 g = graph(title="Rabbits", xtitle="r", ytitle="Final population fraction(s)")
 gd = gdots(graph=g, radius=1, color = color.red)
